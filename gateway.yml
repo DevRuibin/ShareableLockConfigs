@@ -12,33 +12,24 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: students
-          uri: http://localhost:8080
-          predicates:
-            - Path=/api/v1/students/**
-        - id: schools
-          uri: http://localhost:8080
-          predicates:
-            - Path=/api/v1/schools/**
-
         - id: locks
-          uri: http://localhost:8080
+          uri: http://spring-lock-service:8080
           predicates:
             - Path=/api/v1/locks/**
         - id: users
-          uri: http://localhost:8080
+          uri: http://spring-user-service:8080
           predicates:
             - Path=/api/v1/users/**
         - id: messages
-          uri: http://localhost:8080
+          uri: http://spring-message-service:8080
           predicates:
             - Path=/api/v1/messages/**
         - id: logs
-          uri: http://localhost:8080
+          uri: http://spring-log-service:8080
           predicates:
             - Path=/api/v1/logs/**
         - id: files
-          uri: http://localhost:8080
+          uri: http://static-server-spring:80
           predicates:
             - Path=/api/v1/files/**
             - Path=/files/**

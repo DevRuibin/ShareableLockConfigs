@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: spring-user-service
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://spring-discovery-service:8080/eureka
 
 
 server:
@@ -13,7 +13,7 @@ spring:
     name: users
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/users
+    url: jdbc:postgresql://postgresql:5432/users
     username: ruibin
     password: ruibin123
   jpa:
@@ -22,13 +22,13 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   redis:
-    host: 127.0.0.1
+    host: http://redis
     port: 6379
 
 application:
   config:
-    locks-url: http://localhost:8222/api/v1/locks
-    messages-url: http://localhost:8222/api/v1/messages
+    locks-url: http://spring-lock-service:8080/api/v1/locks
+    messages-url: http://spring-message-service:8080/api/v1/messages
 
 management:
   tracing:
