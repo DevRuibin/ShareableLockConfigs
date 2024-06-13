@@ -1,0 +1,40 @@
+eureka:
+  client:
+    register-with-eureka: false
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: locks
+          uri: http://spring-lock-service:8080
+          predicates:
+            - Path=/api/v1/locks/**
+        - id: users
+          uri: http://spring-user-service:8080
+          predicates:
+            - Path=/api/v1/users/**
+        - id: messages
+          uri: http://spring-message-service:8080
+          predicates:
+            - Path=/api/v1/messages/**
+        - id: logs
+          uri: http://spring-log-service:8080
+          predicates:
+            - Path=/api/v1/logs/**
+        - id: files
+          uri: http://static-server-spring:80
+          predicates:
+            - Path=/api/v1/files/**
+            - Path=/files/**
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

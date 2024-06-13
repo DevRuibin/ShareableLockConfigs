@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    hostname: spring-lock-service
+  client:
+    service-url:
+      defaultZone: http://spring-discovery-service:8080/eureka
+
+
+server:
+  port: 8080
+spring:
+  application:
+    name: locks
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgresql:5432/locks
+    username: ruibin
+    password: ruibin123
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  config:
+    users-url: http://spring-user-service:8080/api/v1
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

@@ -1,0 +1,22 @@
+eureka:
+  instance:
+    hostname: spring-mqtt-service
+  client:
+    service-url:
+      defaultZone: http://spring-discovery-service:8080/eureka
+
+
+server:
+  port: 8080
+spring:
+  application:
+    name: mqtt-server
+
+application:
+  config:
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

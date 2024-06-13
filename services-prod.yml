@@ -1,0 +1,9 @@
+
+application:
+  config:
+    users-url: http://spring-user-service:8080/api/v1
+    locks-url: http://spring-lock-service:8080/api/v1
+    messages-url: http://spring-message-service:8080/api/v1
+    files-url: http://static-server-spring:80/api/v1
+    logs-url: http://spring-log-service:8080/api/v1
+    auth-url: http://spring-auth-service:8080/api/v1
