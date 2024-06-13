@@ -7,7 +7,7 @@ eureka:
 
 
 server:
-  port: 8200
+  port: 8080
 spring:
   application:
     name: messages
