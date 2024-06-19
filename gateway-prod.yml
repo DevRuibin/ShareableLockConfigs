@@ -1,5 +1,9 @@
 eureka:
+  instance:
+    hostname: spring-gateway-server
   client:
+    service-url:
+      defaultZone: http://spring-discovery-server:8080/eureka
     register-with-eureka: false
 server:
   port: 8080
@@ -13,23 +17,23 @@ spring:
           enabled: true
       routes:
         - id: locks
-          uri: http://spring-lock-service:8080
+          uri: http://spring-lock-server:8080
           predicates:
             - Path=/api/v1/locks/**
         - id: users
-          uri: http://spring-user-service:8080
+          uri: http://spring-user-server:8080
           predicates:
             - Path=/api/v1/users/**
         - id: messages
-          uri: http://spring-message-service:8080
+          uri: http://spring-message-server:8080
           predicates:
             - Path=/api/v1/messages/**
         - id: logs
-          uri: http://spring-log-service:8080
+          uri: http://spring-logging-server:8080
           predicates:
             - Path=/api/v1/logs/**
         - id: files
-          uri: http://static-server-spring:80
+          uri: http://spring-static-server:80
           predicates:
             - Path=/api/v1/files/**
             - Path=/files/**
