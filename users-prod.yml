@@ -3,7 +3,7 @@ eureka:
     hostname: spring-user-service
   client:
     service-url:
-      defaultZone: http://spring-discovery-service:8080/eureka
+      defaultZone: http://spring-discovery-server:8080/eureka
 
 
 server:
@@ -13,7 +13,7 @@ spring:
     name: users
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgresql:5432/users
+    url: jdbc:postgresql://postgresql-user:5432/users
     username: ruibin
     password: ruibin123
   jpa:
