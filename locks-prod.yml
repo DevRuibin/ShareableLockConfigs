@@ -9,7 +9,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgresql:5432/locks
+    url: jdbc:postgresql://postgresql-lock:5432/locks
     username: ruibin
     password: ruibin123
   jpa:
