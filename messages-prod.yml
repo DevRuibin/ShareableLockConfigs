@@ -23,7 +23,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   rabbitmq:
-    host: http://rabbitmq
+    host: rabbitmq
     port: 5672
     username: user
     password: password
